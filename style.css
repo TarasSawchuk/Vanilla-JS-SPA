@@ -1,0 +1,17 @@
+body {
+    width: 1200px;
+    height: 800px;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+}
+.user-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid brown;
+    border-radius: 5px;
+}
+.user-list > #*:hover {
+    text-decoration: underline;
+}

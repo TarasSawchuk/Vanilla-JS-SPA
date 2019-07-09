@@ -1,0 +1,1 @@
+Single page app which generates to-do task for objects, JSON source https://jsonplaceholder.typicode.com/

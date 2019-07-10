@@ -27,10 +27,21 @@ function printUsers(userArr) {
 }
 //Function for printing to-do list in DOM
 function printTodo() {
-    let listParentElm = document.getElementsByClassName("todos-list")[0],
-        domList = document.createElement("div");
+    let clickedUserProp = this.getAttribute("id"),
+        clickedUsersTodo = listArr.filter( todo => todo.userId == clickedUserProp),
+        titleContainer = clickedUsersTodo.map( a => a.title ),
+        completedContainer = clickedUsersTodo.map( a => a.completed ),
+        todosContainer = document.getElementsByClassName("todos-list");
 
-    listParentElm.appendChild(domList);
+    for(let i = 0; i <= titleContainer.length; i++) {
+        let newListItem = document.createElement("li");
+        newListItem.innerHTML = titleContainer[0];
+    }
+
+        // idContainer = clickedUsersTodo.map( a => a.userId ),
+        // joinedPropsArr = [...idContainer, ...titleContainer],
+        // todoList = new Set(joinedPropsArr),
+        // divForToDo = document.getElementsByClassName("todos-list");
 }
 
 //Adding event listener for users class

@@ -1,5 +1,5 @@
 body {
-    width: 1200px;
+    width: 100vw;
     height: 800px;
 }
 main {
@@ -12,6 +12,7 @@ main {
     border: 1px solid brown;
     border-radius: 5px;
 }
-.user-list > #*:hover {
-    text-decoration: underline;
+.todos-list {
+    display: flex;
+    flex-direction: column;
 }

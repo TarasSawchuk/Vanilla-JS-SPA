@@ -41,12 +41,11 @@ function printTodo() {
     }
     for(let i = 0; i <= titleContainer.length; i++) {
         if(completedContainer[i] === true){
-            liContainer.innerHTML += `<input type="checkbox" checked>${titleContainer[i]}</Br>`;
+            liContainer.innerHTML += `<div><input type="checkbox" checked>${titleContainer[i]}</div></Br>`;
         } else {
-            liContainer.innerHTML += `<input type="checkbox">${titleContainer[i]}</Br>`;
+            liContainer.innerHTML += `<div><input type="checkbox">${titleContainer[i]}</div></Br>`;
         }
     }
-
 }
 
 //Adding event listener for users class

@@ -7,6 +7,7 @@ main {
     justify-content: space-between;
 }
 .app-container {
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -14,14 +15,24 @@ main {
 .user-list {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     border: 1px solid brown;
     border-radius: 5px;
+}
+.user-list .users {
+    color: darkslategrey;
+    font-family: "Times New Roman";
+    cursor: pointer;
+}
+.user-list .users:hover {
+    text-decoration: underline;
 }
 .todos-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid brown;
-    border-right: 1px solid brown;
-    border-bottom: 1px solid brown;
+    width: 70%;
+    color: darkslategrey;
+    font-family: "Times New Roman";
+    border: 1px solid brown;
     border-radius: 5px;
 }

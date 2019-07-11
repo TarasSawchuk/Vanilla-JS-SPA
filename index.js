@@ -25,23 +25,28 @@ function printUsers(userArr) {
         domUser.innerHTML += `<div class = "users" id = ${index+1} >` + user.id + " " + user.username + `</div>`;
     });
 }
-//Function for printing to-do list in DOM
+//Onclick function for printing and removing to-do list in DOM
 function printTodo() {
-    let clickedUserProp = this.getAttribute("id"),
-        clickedUsersTodo = listArr.filter( todo => todo.userId == clickedUserProp),
+    let clickedUserId = this.getAttribute("id"),
+        clickedUsersTodo = listArr.filter( todo => todo.userId == clickedUserId),
         titleContainer = clickedUsersTodo.map( a => a.title ),
         completedContainer = clickedUsersTodo.map( a => a.completed ),
-        todosContainer = document.getElementsByClassName("todos-list");
+        todosContainer = document.getElementsByClassName("todos-list")[0],
+        liContainer = document.createElement("ul");
 
+    todosContainer.appendChild(liContainer);
+
+    if(todosContainer.childNodes.length > 2) {
+        todosContainer.removeChild(document.getElementsByTagName("ul")[0]);
+    }
     for(let i = 0; i <= titleContainer.length; i++) {
-        let newListItem = document.createElement("li");
-        newListItem.innerHTML = titleContainer[0];
+        if(completedContainer[i] === true){
+            liContainer.innerHTML += `<input type="checkbox" checked>${titleContainer[i]}</Br>`;
+        } else {
+            liContainer.innerHTML += `<input type="checkbox">${titleContainer[i]}</Br>`;
+        }
     }
 
-        // idContainer = clickedUsersTodo.map( a => a.userId ),
-        // joinedPropsArr = [...idContainer, ...titleContainer],
-        // todoList = new Set(joinedPropsArr),
-        // divForToDo = document.getElementsByClassName("todos-list");
 }
 
 //Adding event listener for users class

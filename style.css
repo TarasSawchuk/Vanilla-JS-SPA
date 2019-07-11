@@ -6,6 +6,11 @@ main {
     display: flex;
     justify-content: space-between;
 }
+.app-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 .user-list {
     display: flex;
     flex-direction: column;
@@ -15,4 +20,8 @@ main {
 .todos-list {
     display: flex;
     flex-direction: column;
+    border-top: 1px solid brown;
+    border-right: 1px solid brown;
+    border-bottom: 1px solid brown;
+    border-radius: 5px;
 }

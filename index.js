@@ -41,9 +41,9 @@ function printTodo() {
     }
     for(let i = 0; i <= titleContainer.length; i++) {
         if(completedContainer[i] === true){
-            liContainer.innerHTML += `<div><input type="checkbox" checked>${titleContainer[i]}</div></Br>`;
+            liContainer.innerHTML += `<div><label><input type="checkbox" checked>${titleContainer[i]}</label></div></Br>`;
         } else {
-            liContainer.innerHTML += `<div><input type="checkbox">${titleContainer[i]}</div></Br>`;
+            liContainer.innerHTML += `<div><label><input type="checkbox">${titleContainer[i]}</label></div></Br>`;
         }
     }
 }

@@ -36,16 +36,39 @@ function printTodo() {
 
     for(let i = 0; i <= titleContainer.length; i++) {
         if(completedContainer[i] === true){
-            todosContainer.innerHTML += `<div class="todosElm"><label><input type="checkbox" checked><span>${titleContainer[i]}</span></label><button onclick="removeButton(this)">Remove</button></div>`;
+            todosContainer.innerHTML += `<div class="todosElm"><input type="checkbox" onclick="strikeTitleInArr(this)" checked><span>${titleContainer[i]}</span><button onclick="removeFunc(this)">Remove</button></div>`;
         }else if(completedContainer[i] === false){
-            todosContainer.innerHTML += `<div class="todosElm"><label><input type="checkbox"><span>${titleContainer[i]}</span></label><button onclick="removeButton(this)">Remove</button></div>`;
+            todosContainer.innerHTML += `<div class="todosElm"><input type="checkbox" onclick="strikeTitleInArr(this)" ><span>${titleContainer[i]}</span><button onclick="removeFunc(this)">Remove</button></div>`;
         }
     }
 }
 
-//Function which delete todos element
-function removeButton(e) {
+//Onclick function which delete todos element from DOM and Array
+function removeFunc(e) {
+    let parentTodoContainer = e.parentNode,
+        todoFromArr = parentTodoContainer.childNodes[[1]].innerHTML;
+
+    for(let i = listArr.length - 1; i >= 0; --i) {
+        if(listArr[i].title === todoFromArr) {
+            listArr.splice(i, 1);
+        }
+    }
     e.parentNode.remove();
+}
+
+//Onclick function which strike todos title element from DOM and Array
+function strikeTitleInArr(e) {
+    let parentTodoContainer = e.parentNode,
+        todoFromArr = parentTodoContainer.childNodes[[1]].innerHTML;
+
+    for(let i = listArr.length - 1; i >= 0; --i) {
+        if(listArr[i].title === todoFromArr ) {
+            listArr[i].title = `<s>${todoFromArr}</s>`
+            parentTodoContainer.childNodes[0].checked
+        }
+    }
+
+    console.log(parentTodoContainer.childNodes[0]);
 }
 
 //Adding event listener for users class

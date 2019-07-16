@@ -7,8 +7,9 @@ main {
     justify-content: space-between;
 }
 .app-container {
+    width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
 }
 .user-list {
